@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit User {% endblock %}
+
+{% block content %} 
+
+<h1>Edit User {{user.first_name}} {{user.last_name}}</h1>
+
+<form action="/commit/{{user.id}}">
+    <label for="">First Name</label>
+    <input type="text" name="first" value="{{user.first_name}}">
+    <label for="">Last Name</label>
+    <input type="text" name="last" value="{{user.last_name}}">
+    <label for="">Image URL</label>
+    <input type="text" name="image" value="{{user.image_url}}">
+    <button>Edit</button>
+</form>
+<form action="/">
+    <button>Cancel</button>
+</form>
+{% endblock %}

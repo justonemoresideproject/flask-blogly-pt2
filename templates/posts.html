@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block title %} Posts {% endblock %} 
+
+{% block content %} 
+
+<h1>Posts!</h1>
+
+<table>
+    {% for post in posts %}
+    <tr>
+        <td>
+            <span class='title'>{{post.title}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class='comment'>{{post.comment}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class='timeMade'>{{post.time_made}}</span>
+        </td>
+        <td>
+            <a href="/editPost/{{post.posted_by}}/{{post.id}}">Edit Post</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

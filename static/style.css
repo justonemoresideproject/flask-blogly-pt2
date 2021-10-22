@@ -1,0 +1,39 @@
+.profilePic {
+    width: 30px;
+    height: 30px;
+    size: 30px 30px;
+    margin-right: 10px;
+}
+
+.userPic {
+    width: 60px;
+    height: 60px;
+    size: 60px 60px;
+}
+
+li {
+    padding: 6px;
+    padding-left: 10px;
+    list-style: none;
+    font: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul > li:nth-of-type(odd) {
+    background-color: hsl(0, 2%, 55%);
+}
+
+.userName {
+    text-decoration: underline;
+    color: black;
+}
+
+.userName :hover {
+    /* text-decoration: underline rgb(124, 121, 121); */
+    background-color: rgb(165, 165, 170);
+}
+
+.profileName {
+    font: 18px;
+    
+}

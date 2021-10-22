@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} User Interface {% endblock %}
+
+{% block content %}
+
+<img src="{{user.image_url}}" alt="" class="userPic">
+<span class='profileName'>{{user.get_full_name}}</span>
+<h2>Posts!</h2>
+<a href="/newPost/{{user.id}}">Add Post</a>
+
+<!-- <ul>
+    {% for post in user.posts %}
+    <li class='title'>
+        {{post.title}}
+        <ul>
+            <li class="comment">
+                {{post.comment}}
+                <li class="postedAt">
+                    Posted at {{post.time_made}}
+                </li>
+            </li>
+        </ul>
+    </li>
+    {% endfor %}
+</ul> -->
+<table>
+    {% for post in user.posts %}
+    <tr>
+        <td>
+            <span class='title'>{{post.title}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class='comment'>{{post.comment}}</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class='timeMade'>{{post.time_made}}</span>
+        </td>
+        <td>
+            <a href="/editPost/{{user.id}}/{{post.id}}">Edit Post</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

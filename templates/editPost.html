@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Post {% endblock %}
+
+{% block content %} 
+
+<h1>Edit Post</h1>
+
+<form action="/commitPostEdit/{{user.id}}/{{post.id}}", method='post'>
+    <label for="">Title</label>
+    <input type="text" name="title" value="{{post.title}}">
+    <label for="">Comment</label>
+    <input type="text" name="comment" value="{{post.comment}}">
+    <button>Edit</button>
+</form>
+
+{% endblock %}
